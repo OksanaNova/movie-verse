@@ -4,7 +4,7 @@ function Navbar() {
     return (
         <nav>
             <div className='logo'>
-                <h1>MovieVerse</h1>
+                <h1>Movie<span>Verse</span></h1>
                 <p>Find your next favorite movie</p>
             </div>
             <div className='nav-links'>
