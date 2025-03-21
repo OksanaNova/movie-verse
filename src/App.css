@@ -55,3 +55,24 @@ footer p {
   margin-right: 8px;
 }
 
+.btnSearch {
+  background: transparent;
+  border: none;
+  margin-left: 5px;
+}
+
+.btnSearch:hover {
+  cursor: pointer;
+}
+
+input {
+  padding: 10px;
+  border-radius: 20px;
+  background-color: rgba(118, 118, 128, 0.12);
+  font-family: "Poppins", sans-serif;
+  width: 300px;
+}
+
+form {
+  display: flex;
+}
