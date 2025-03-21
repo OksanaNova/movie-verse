@@ -1,4 +1,4 @@
-import React from 'react';
+
 import {
   BrowserRouter as Router,
   Routes,
@@ -13,6 +13,7 @@ import Footer from './components/Footer';
 import './App.css'
 
 function App() {
+
 
 
   return (<Router>
