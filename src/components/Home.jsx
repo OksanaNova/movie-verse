@@ -1,6 +1,7 @@
 
 import { useState } from "react";
 import SearshInput from "./SearchInput";
+import SearchResults from "./SearchResults";
 
 
 function Home() {
@@ -10,11 +11,15 @@ function Home() {
 
     return (
         <div>
+
             <SearshInput 
             userSearch={userSearch}
             setUserSearch={setUserSearch}
-            searchResults={searchResults}
             setSearchResults={setSearchResults}/>
+
+            <SearchResults 
+            searchResults={searchResults}
+            />
         </div>
     )
 }

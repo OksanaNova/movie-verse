@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import image from '../assets/ri-search-line.svg'
 
-function SearshInput( {userSearch, setUserSearch, searchResults, setSearchResults} ) {
+function SearshInput( {userSearch, setUserSearch, setSearchResults} ) {
 
     const MY_KEY = "c6b908d5b1167252cde35a2286356a40"
     // https://api.themoviedb.org/3/discover/movie
@@ -11,7 +11,7 @@ function SearshInput( {userSearch, setUserSearch, searchResults, setSearchResult
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${MY_KEY}&query=avatar`);
             const data = await response.json();
             setSearchResults(data.results)
-            // console.log(data.results)
+            console.log(data.results)
         }
         getMovie()
     }, [])
@@ -23,6 +23,7 @@ function SearshInput( {userSearch, setUserSearch, searchResults, setSearchResult
 
     return (
         <div>
+
             <div className='search_container'>
                 <form>
                   <input 
@@ -37,16 +38,6 @@ function SearshInput( {userSearch, setUserSearch, searchResults, setSearchResult
                 </form>
           </div>
 
-          {searchResults.map((element, index) => {
-            const {title, vote_average, overview} = element;
-            return (
-                <div key={index}>
-                    <p>{title}</p>
-                    <p>{vote_average}</p>
-                    <p>{overview}</p>
-                </div>
-            )
-          })}
 
       </div>
     )
