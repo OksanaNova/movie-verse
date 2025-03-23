@@ -13,16 +13,7 @@ function SearchResults({searchResults}) {
             ))}
 
 
-            {/* {searchResults.map(element => {
-                const {title, vote_average, id, poster_path} = element;
-                return (
-                    <div key={id}>
-                        <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title}/>
-                        <p>{title}</p>
-                        <p>{vote_average}</p>
-                    </div>
-                )
-            })} */}
+
         </div>
     )
 }
