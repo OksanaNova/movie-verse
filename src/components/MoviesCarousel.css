@@ -1,0 +1,25 @@
+.carousel-container {
+    width: 100%;
+    padding: 20px 0;
+  }
+  
+  .slick-slide {
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .slick-slide:hover {
+    transform: scale(1.1); 
+  }
+  
+  .slick-prev,
+  .slick-next {
+    width: 40px;
+    height: 40px;
+    z-index: 10;
+  }
+  
+  .slick-prev:before,
+  .slick-next:before {
+    font-size: 30px;
+    color: white;
+  }

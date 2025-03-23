@@ -1,6 +1,6 @@
-/* body {
+body {
   background: #222;
-} */
+}
 
 nav {
   display: flex;
@@ -123,8 +123,11 @@ form {
 .no-results {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  /* color: white; */
+  color: white;
   margin-top: 20px;
 }
+
+
+
 
 

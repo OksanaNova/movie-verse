@@ -5,7 +5,7 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
 
     const MY_KEY = "c6b908d5b1167252cde35a2286356a40";
 
-    useEffect( ()=> {
+    useEffect( () => {
         const getMovie = async () => {
             const response = await fetch(`https://api.themoviedb.org/3/search/movie?api_key=${MY_KEY}&query=${wordSubmitted}`);
             const data = await response.json();
