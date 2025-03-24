@@ -2,6 +2,8 @@ import MovieCard from "./MovieCard";
 
 function SearchResults({searchResults}) {
 
+    // if(searchResults.length === 0 || searchResults.length < 0) return <p className="no-results">No movies found. Try a different search! 🎬</p> 
+
     return (
 
         <div className="search-result-container">
@@ -15,10 +17,16 @@ function SearchResults({searchResults}) {
                     poster_path={element.poster_path}/>
                 ))
             )
-        : (<p className="no-results">No movies found. Try a different search! 🎬</p>)}
+          : (<p className="no-results">No movies found. Try a different search! 🎬</p>)}
 
         </div>
     )
 }
 
 export default SearchResults;
+
+
+
+
+
+ 

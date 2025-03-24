@@ -36,6 +36,8 @@ function Home() {
                 setWordSubmitted={setWordSubmitted}/>
             </div>
 
+
+
             <div>
                 {searchResults.length > 0 ? (
                     <SearchResults 
@@ -43,7 +45,7 @@ function Home() {
                     />
                 ) : (
                    <div>
-                    <h2>Trending Movies</h2>
+                    <p className="carousel-header"><b>Trending</b> Movies</p>
                     <MoviesCarousel 
                     trendingMovies={trendingMovies}/>
                    </div>
