@@ -2,8 +2,6 @@ import MovieCard from "./MovieCard";
 
 function SearchResults({searchResults}) {
 
-    // if(searchResults.length === 0 || searchResults.length < 0) return <p className="no-results">No movies found. Try a different search! 🎬</p> 
-
     return (
 
         <div className="search-result-container">

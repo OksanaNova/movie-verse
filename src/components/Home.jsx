@@ -13,7 +13,9 @@ function Home() {
       const [searchResults, setSearchResults] = useState([]);
       const [wordSubmitted, setWordSubmitted] = useState('');
 
-      const [trendingMovies, setTrendingMovies] = useState([])
+      const [searchAttempted, setSearchAttempted] = useState(false);
+
+      const [trendingMovies, setTrendingMovies] = useState([]);
 
       useEffect( () => {
         const getTrendingMovies = async () => {
@@ -25,35 +27,39 @@ function Home() {
       }, [])
 
     return (
-        <div>
 
+        <div>
             <div>
                 <SearshInput 
                 userSearch={userSearch}
                 setUserSearch={setUserSearch}
                 setSearchResults={setSearchResults}
                 wordSubmitted={wordSubmitted}
-                setWordSubmitted={setWordSubmitted}/>
+                setWordSubmitted={setWordSubmitted}
+                setSearchAttempted={setSearchAttempted}/>
             </div>
-
-
 
             <div>
                 {searchResults.length > 0 ? (
                     <SearchResults 
-                    searchResults={searchResults}
-                    />
-                ) : (
+                    searchResults={searchResults}/>
+                ) : searchAttempted ? (
+                    <>
+                        <p className="no-results">No movies found. Try a different search! 🎬</p>
+                        <div>
+                            <p className="carousel-header"><b>Trending</b> Now</p>
+                            <MoviesCarousel 
+                            trendingMovies={trendingMovies}/>
+                        </div>
+                   </>
+                  ) : (
                    <div>
-                    <p className="carousel-header"><b>Trending</b> Movies</p>
-                    <MoviesCarousel 
-                    trendingMovies={trendingMovies}/>
+                        <p className="carousel-header"><b>Trending</b> Now</p>
+                        <MoviesCarousel 
+                        trendingMovies={trendingMovies}/>
                    </div>
                 )}
             </div>
-
-
-
 
         </div>
     )
