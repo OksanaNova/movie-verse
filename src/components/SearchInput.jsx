@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
-import image from '../assets/ri-search-line.svg'
+import image from '../assets/ri-search-line.svg';
+import Swal from 'sweetalert2';
 
 function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitted, setWordSubmitted, setSearchAttempted} ) {
 
@@ -27,7 +28,7 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
     const finalSearch = (e) => {
         e.preventDefault();
         if(userSearch.trim() === '') {
-            alert('Please enter a movie name! 🎬')
+            Swal.fire("Please enter a movie name! 🎬");
             return;
         }
         setWordSubmitted(userSearch);
