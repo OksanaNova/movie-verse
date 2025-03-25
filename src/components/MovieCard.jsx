@@ -1,8 +1,10 @@
-function MovieCard({title, vote, poster_path}) {
+import { Link } from "react-router-dom";
+
+function MovieCard({title, vote, poster_path, id}) {
 
     return (
 
-        <div className="movie-card">
+        <Link to={`/movie/${id}`} className="movie-card">
 
             <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title} />
 
@@ -12,7 +14,7 @@ function MovieCard({title, vote, poster_path}) {
                 <p>⭐ {vote.toFixed(1)}</p>
             </div>
 
-        </div>
+        </Link>
     )
 }
 

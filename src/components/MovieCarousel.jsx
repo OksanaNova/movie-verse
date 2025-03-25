@@ -4,7 +4,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./MoviesCarousel.css";
 
-function MoviesCarousel( {trendingMovies} ) {
+function MoviesCarousel( {movies} ) {
 
     const settings = {
         infinite: true, 
@@ -23,9 +23,10 @@ function MoviesCarousel( {trendingMovies} ) {
         <div className="carousel-container">
 
             <Slider {...settings}>
-                {trendingMovies.map((element) => (
+                {movies.map((element) => (
                     <MovieCard 
                     key={element.id}
+                    id={element.id}
                     title={element.title}
                     vote={element.vote_average}
                     poster_path={element.poster_path}/>

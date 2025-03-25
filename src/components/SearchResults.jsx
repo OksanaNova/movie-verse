@@ -10,6 +10,7 @@ function SearchResults({searchResults}) {
                 searchResults.map((element) => (
                     <MovieCard 
                     key={element.id}
+                    id={element.id}
                     title={element.title}
                     vote={element.vote_average}
                     poster_path={element.poster_path}/>

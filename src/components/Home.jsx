@@ -49,14 +49,14 @@ function Home() {
                         <div>
                             <p className="carousel-header"><b>Trending</b> Now</p>
                             <MoviesCarousel 
-                            trendingMovies={trendingMovies}/>
+                            movies={trendingMovies}/>
                         </div>
                    </>
                   ) : (
                    <div>
                         <p className="carousel-header"><b>Trending</b> Now</p>
                         <MoviesCarousel 
-                        trendingMovies={trendingMovies}/>
+                        movies={trendingMovies}/>
                    </div>
                 )}
             </div>
