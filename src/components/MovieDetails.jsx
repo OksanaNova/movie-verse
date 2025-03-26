@@ -1,26 +1,37 @@
 import { useEffect, useState } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import back from '../assets/back.png';
 import addButton from '../assets/addToList.png';
 
 function MovieDetails() {
+
+    const MY_KEY = "c6b908d5b1167252cde35a2286356a40";
 
     const navigate = useNavigate();
     const { id } = useParams();
 
     const [myMovieDetails, setMyMovieDetails] = useState(null);
 
-    const MY_KEY = "c6b908d5b1167252cde35a2286356a40";
+    const [expanded, setExpanded] = useState(false);
+
+    const location = useLocation();
+    const { searchResults, userSearch } = location.state || {};
 
     useEffect(() => {
+        if(!id) return;
+
         const getMovieDetails = async () => {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=${MY_KEY}`);
             const data = await response.json();
             setMyMovieDetails(data)
-            console.log(data)
+            // console.log(data)
         }
         getMovieDetails()
     }, [id])
+
+    const toggleOverview = () => {
+        setExpanded(!expanded)
+    }
 
     if(!myMovieDetails) return <p>Loading..</p>
 
@@ -28,7 +39,7 @@ function MovieDetails() {
 
         <div className='movie-details-container'>
 
-            <button className='back'>
+            <button onClick={() => navigate("/", { state: {searchResults, userSearch} })} className='back'>
                 <img src={back} alt='back-arrow'/>
             </button>
 
@@ -49,7 +60,14 @@ function MovieDetails() {
 
                     <div className='description'>
                         <h2>Plot</h2>
-                        <p>{myMovieDetails.overview}</p>
+
+                        <p>
+                            {expanded ? myMovieDetails.overview : `${myMovieDetails.overview.slice(0, 140)}... `}
+                            <button onClick={toggleOverview} className='toggle-button'>
+                                {expanded ? "Show less" : "Show more"}
+                            </button>
+                        </p>
+
                         <h2>Made in</h2>
                         <p>{myMovieDetails.production_countries.map(item => item.name).join(", ")}</p>
 

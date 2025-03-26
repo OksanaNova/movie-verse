@@ -3,19 +3,22 @@ import { useEffect, useState } from "react";
 import SearshInput from "./SearchInput";
 import SearchResults from "./SearchResults";
 import MoviesCarousel from "./MovieCarousel";
+import { useLocation } from "react-router";
+
 
 
 function Home() {
 
     const MY_KEY = "c6b908d5b1167252cde35a2286356a40";
     
-      const [userSearch, setUserSearch] = useState('');
-      const [searchResults, setSearchResults] = useState([]);
-      const [wordSubmitted, setWordSubmitted] = useState('');
+    const location = useLocation();
+    const [userSearch, setUserSearch] = useState(location.state?.userSearch || '');
+    const [searchResults, setSearchResults] = useState(location.state?.searchResults || []);
+    const [wordSubmitted, setWordSubmitted] = useState('');
 
-      const [searchAttempted, setSearchAttempted] = useState(false);
+    const [searchAttempted, setSearchAttempted] = useState(false);
 
-      const [trendingMovies, setTrendingMovies] = useState([]);
+    const [trendingMovies, setTrendingMovies] = useState([]);
 
       useEffect( () => {
         const getTrendingMovies = async () => {
@@ -42,7 +45,8 @@ function Home() {
             <div>
                 {searchResults.length > 0 ? (
                     <SearchResults 
-                    searchResults={searchResults}/>
+                    searchResults={searchResults}
+                    userSearch={userSearch}/>
                 ) : searchAttempted ? (
                     <>
                         <p className="no-results">No movies found. Try a different search! 🎬</p>

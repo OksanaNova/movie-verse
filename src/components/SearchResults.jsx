@@ -1,6 +1,6 @@
 import MovieCard from "./MovieCard";
 
-function SearchResults({searchResults}) {
+function SearchResults({searchResults, userSearch}) {
 
     return (
 
@@ -13,7 +13,9 @@ function SearchResults({searchResults}) {
                     id={element.id}
                     title={element.title}
                     vote={element.vote_average}
-                    poster_path={element.poster_path}/>
+                    poster_path={element.poster_path}
+                    searchResults={searchResults}
+                    userSearch={userSearch}/>
                 ))
             )
           : (<p className="no-results">No movies found. Try a different search! 🎬</p>)}

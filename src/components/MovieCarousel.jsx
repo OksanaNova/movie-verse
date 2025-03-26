@@ -31,7 +31,6 @@ function MoviesCarousel( {movies} ) {
                     vote={element.vote_average}
                     poster_path={element.poster_path}/>
                 ))}
-
             </Slider>
 
         </div>
