@@ -141,10 +141,83 @@ form {
   margin: 40px;
 }
 
-.movie-details {
+.movie-details-container {
+  display: flex;
+  align-items: flex-start;
   color: white;
   font-family: "Poppins", sans-serif;
-} 
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 80px;
+  padding-bottom: 40px;
+}
+
+.movie-details {
+  display: flex;
+}
+
+.movie-details img {
+  border-radius: 40px;
+  width: 100%;
+}
+
+.movie-details-image, .movie-details-info {
+  padding: 0 40px;
+}
+
+.movie-details-image {
+  width: 35%;
+}
+
+.movie-details-info {
+  width: 55%;
+}
+
+.movie-details-info h1, .description h2 {
+  margin: 0;
+  font-weight: 500;
+}
+
+.description p {
+  margin-top: 0;
+  color: #A0A0A0;
+  text-align: justify;
+}
+
+.movie-details-about {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  color: #A0A0A0;
+}
+
+.movie-details-about p {
+  padding-right: 10px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.release-date, .genres {
+  border-right: 1px solid #A0A0A0;
+}
+
+.back, .addToList {
+  background: transparent;
+  border: none;
+}
+
+.back:hover, .addToList:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+
+
+
+
+
+
 
 
 
