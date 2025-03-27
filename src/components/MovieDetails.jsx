@@ -4,6 +4,7 @@ import back from '../assets/back.png';
 import addButton from '../assets/addToList.png';
 import LoaderPage from './LoaderPage';
 import Swal from 'sweetalert2';
+import MoviesCarousel from './MovieCarousel';
 
 function MovieDetails() {
 
@@ -13,6 +14,7 @@ function MovieDetails() {
     const { id } = useParams();
 
     const [myMovieDetails, setMyMovieDetails] = useState(null);
+    const [similarMovies, setSimilarMovies] = useState([]);
 
     const [stateLoader, setStateLoader] = useState(false);
 
@@ -41,8 +43,17 @@ function MovieDetails() {
                     text: "Something went wrong!",
                   });
             }
-        }
-        getMovieDetails()
+        }; 
+
+        const getSimilarMovies = async () => {
+            const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${MY_KEY}`);
+            const data = await response.json();
+            setSimilarMovies(data.results);
+            // console.log('similar', data.results)
+        }; 
+
+        getMovieDetails();
+        getSimilarMovies();
     }, [id])
 
     const toggleOverview = () => {
@@ -100,6 +111,14 @@ function MovieDetails() {
                 </button>
 
             </div>
+
+            <div>
+                <p className="carousel-header"><b>You May</b> Also Like</p>
+                <MoviesCarousel 
+                movies={similarMovies}/>
+            </div>
+
+
 
         </>
     
