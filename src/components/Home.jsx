@@ -5,8 +5,6 @@ import SearchResults from "./SearchResults";
 import MoviesCarousel from "./MovieCarousel";
 import { useLocation } from "react-router";
 
-
-
 function Home() {
 
     const MY_KEY = "c6b908d5b1167252cde35a2286356a40";

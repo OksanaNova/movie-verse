@@ -13,15 +13,17 @@ import './App.css'
 
 function App() {
 
-  return (<Router>
+  return (<Router id="root">
     
     <Navbar />
 
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/favorites' element={<Favorites />} />
-      <Route path='/movie/:id' element={<MovieDetails />} />
-    </Routes>
+    <main>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/favorites' element={<Favorites />} />
+        <Route path='/movie/:id' element={<MovieDetails />} />
+      </Routes>
+    </main>
 
     <Footer />
 

@@ -41,7 +41,7 @@ function MovieDetails() {
                     icon: "error",
                     title: "Oops...",
                     text: "Something went wrong!",
-                  });
+                });
             }
         }; 
 
@@ -67,7 +67,6 @@ function MovieDetails() {
     return (
 
         <>
-
             <div className='movie-details-container'>
 
                 <button onClick={() => navigate("/", { state: {searchResults, userSearch} })} className='back'>
@@ -112,11 +111,12 @@ function MovieDetails() {
 
             </div>
 
+            {similarMovies.length > 0 && 
             <div>
                 <p className="carousel-header"><b>You May</b> Also Like</p>
                 <MoviesCarousel 
                 movies={similarMovies}/>
-            </div>
+            </div>}
 
 
 

@@ -1,5 +1,17 @@
-body {
+body, html {
+  height: 100%;
+  margin: 0;
   background: #222;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex-grow: 1;
 }
 
 /* loader */
@@ -139,11 +151,8 @@ footer {
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
   padding: 10px;
+  background: #222;
   color: #A0A0A0;
   font-family: "Poppins", sans-serif;
   font-size: 12px;
@@ -153,10 +162,26 @@ footer p {
   margin-right: 8px;
 }
 
+.search-container {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  /* width: 90%; */
+}
+
+form {
+  display: flex;
+  /* justify-content: center; */
+  width: 80%;
+}
+
 .btnSearch {
   background: transparent;
-  border: none;
+  border-radius: 20px;
+  padding: 0 20px;
+  /* border: none; */
   margin-left: 5px;
+  /* flex: 1; */
 }
 
 .btnSearch:hover {
@@ -168,12 +193,9 @@ input {
   border-radius: 20px;
   background-color: rgba(118, 118, 128, 0.12);
   font-family: "Poppins", sans-serif;
-  width: 300px;
+  /* width: 300px; */
   color: white;
-}
-
-form {
-  display: flex;
+  flex: 5;
 }
 
 .movie-card {
@@ -276,6 +298,10 @@ form {
 .movie-details-info h1, .description h2 {
   margin: 0;
   font-weight: 500;
+}
+
+.movie-details-info h1 {
+  line-height: 1.1;
 }
 
 .description p {
