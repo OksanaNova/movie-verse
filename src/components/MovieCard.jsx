@@ -1,12 +1,12 @@
 import { Link } from "react-router-dom";
 
-function MovieCard({title, vote, poster_path, id, searchResults, userSearch}) {
+function MovieCard({title, vote, poster_path, id, searchResults, userSearch, fromFavorites}) {
 
     return (
 
         <Link 
             to={`/movie/${id}`} 
-            state={{ searchResults, userSearch }}
+            state={{ searchResults, userSearch, fromFavorites }}
             className="movie-card">
 
             <img src={`https://image.tmdb.org/t/p/w300${poster_path}`} alt={title} />

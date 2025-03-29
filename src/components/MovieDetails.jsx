@@ -22,7 +22,7 @@ function MovieDetails() {
     const [expanded, setExpanded] = useState(false);
 
     const location = useLocation();
-    const { searchResults, userSearch } = location.state || {};
+    const { searchResults, userSearch, fromFavorites } = location.state || {};
 
     useEffect(() => {
         if(!id) return;
@@ -87,7 +87,15 @@ function MovieDetails() {
         <>
             <div className='movie-details-container'>
 
-                <button onClick={() => navigate("/", { state: {searchResults, userSearch} })} className='back'>
+                <button className='back' onClick={() => {
+                    if(fromFavorites) {
+                        navigate('/favorites')
+                    } else if (searchResults || userSearch) {
+                        navigate('/', { state: {searchResults, userSearch} })
+                    } else {
+                        navigate('/')
+                    }
+                }}>
                     <img src={back} alt='back-arrow'/>
                 </button>
 

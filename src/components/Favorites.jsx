@@ -1,17 +1,17 @@
 import { useEffect, useState } from "react";
 import MovieCard from "./MovieCard";
+import { useLocation } from "react-router-dom";
 
 
 function Favorites() {
 
+    const location = useLocation();
     const [favorites, setFavorites] = useState([]);
 
     useEffect(() => {
         const savedMovies = JSON.parse(localStorage.getItem('favorite')) || [];
         setFavorites(savedMovies);
-    }, [])
-
-
+    }, [location])
 
     return (
         <>
@@ -28,7 +28,8 @@ function Favorites() {
                         id={element.id}
                         title={element.title}
                         vote={element.vote_average}
-                        poster_path={element.poster_path}/>
+                        poster_path={element.poster_path}
+                        fromFavorites={true}/>
                     ))
                 )
             : (<p className="no-results">Nothing here yet!<br/> Start building your watchlist 🎬</p>)}
