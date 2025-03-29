@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import back from '../assets/back.png';
-import addButton from '../assets/addToList.png';
 import LoaderPage from './LoaderPage';
 import Swal from 'sweetalert2';
 import MoviesCarousel from './MovieCarousel';
@@ -14,6 +13,8 @@ function MovieDetails() {
     const { id } = useParams();
 
     const [myMovieDetails, setMyMovieDetails] = useState(null);
+    const [isMovieSaved, setIsMovieSaved] = useState(false);
+
     const [similarMovies, setSimilarMovies] = useState([]);
 
     const [stateLoader, setStateLoader] = useState(false);
@@ -33,8 +34,12 @@ function MovieDetails() {
             if(response.ok) {
                 setStateLoader(false);
                 const data = await response.json();
-                setMyMovieDetails(data)
+                setMyMovieDetails(data);
                 // console.log(data)
+
+                const savedMovies = JSON.parse(localStorage.getItem('favorite')) || [];
+                setIsMovieSaved(savedMovies.some(movie => movie.id === data.id));
+
             } else {
                 setStateLoader(false);
                 Swal.fire({
@@ -58,6 +63,19 @@ function MovieDetails() {
 
     const toggleOverview = () => {
         setExpanded(!expanded)
+    }
+
+    const addToFavorites = () => {
+        const savedMovies = JSON.parse(localStorage.getItem('favorite')) || [];
+
+        if(isMovieSaved) {
+            const updatedMovies = savedMovies.filter(movie => movie.id !== myMovieDetails.id);
+            localStorage.setItem('favorite', JSON.stringify(updatedMovies));
+            setIsMovieSaved(false);
+        } else {
+            localStorage.setItem('favorite', JSON.stringify([...savedMovies, myMovieDetails]));
+            setIsMovieSaved(true);
+        }
     }
 
     if(stateLoader) return <LoaderPage />
@@ -105,8 +123,17 @@ function MovieDetails() {
                     </div>
                 </div>
 
-                <button className='addToList'>
-                    <img src={addButton} alt='add-button'/>
+                <button 
+                onClick={addToFavorites} 
+                className={`favorite-button ${isMovieSaved ? "saved" : "default"}`} >
+                    <svg 
+                        width="25" 
+                        height="25" 
+                        viewBox="0 0 24 24" 
+                        fill={isMovieSaved ? "red" : "white"}
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
+                    </svg>
                 </button>
 
             </div>
