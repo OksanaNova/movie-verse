@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+
     return (
         <nav>
             <div className='logo'>

@@ -46,14 +46,14 @@ function Home() {
                     searchResults={searchResults}
                     userSearch={userSearch}/>
                 ) : searchAttempted ? (
-                    <>
+                    <div>
                         <p className="no-results">No movies found. Try a different search! 🎬</p>
                         <div>
                             <p className="carousel-header"><b>Trending</b> Now</p>
                             <MoviesCarousel 
                             movies={trendingMovies}/>
                         </div>
-                   </>
+                   </div>
                   ) : (
                    <div>
                         <p className="carousel-header"><b>Trending</b> Now</p>

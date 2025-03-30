@@ -115,6 +115,7 @@ main {
 
 nav {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
   color: white;
@@ -145,6 +146,10 @@ h1 span {
   text-decoration: none;
   color: #A0A0A0;
   font-weight: 500;
+}
+
+.nav-links a:hover {
+  color: white;
 }
 
 footer {
@@ -252,15 +257,15 @@ input {
   font-family: "Poppins", sans-serif;
   text-align: center;
   color: white;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .carousel-header {
   font-family: "Poppins", sans-serif;
   color: white;
   font-size: 20px;
-  /* margin: 40px 0 40px 40px; */
-  margin: 40px;
+  margin: 25px 0 10px 40px;
+  /* margin: 40px; */
 }
 
 .movie-details-container {
@@ -345,6 +350,34 @@ input {
   font-size: 14px;
   cursor: pointer;
 }
+
+.favorites-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.favorites-header button {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  background: transparent;
+  border-radius: 20px;
+  padding: 5px 20px;
+  cursor: pointer;
+  margin-right: 20px;
+}
+
+.favorites-header button:hover {
+  scale: 1.1;
+}
+
+.fav {
+  margin-top: 200px;
+}
+
+  
+
 
 
 
