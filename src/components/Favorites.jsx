@@ -14,7 +14,7 @@ function Favorites() {
     }, [location])
 
     const deleteAllMovies = () => {
-        localStorage.clear();
+        localStorage.removeItem('favorite');
         setFavorites([])
     }
 
@@ -35,7 +35,8 @@ function Favorites() {
                         title={element.title}
                         vote={element.vote_average}
                         poster_path={element.poster_path}
-                        fromFavorites={true}/>                    
+                        fromFavorites={true}
+                        setFavorites={setFavorites}/>                    
                     ))
                 }
             </div>

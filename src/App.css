@@ -376,7 +376,54 @@ input {
   margin-top: 200px;
 }
 
+/* .remove-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.remove-btn:hover {
+  background: rgba(255, 0, 0, 0.1);
+  border-radius: 50%;
+}
   
+.trash-icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  transition: fill 0.2s ease-in-out;
+}
+
+.remove-btn:hover .trash-icon {
+  fill: red;
+} */
+
+
+.remove-btn {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  border: none;
+  border-radius: 50%;
+  background: rgba(201, 199, 199, 0.6);
+  padding: 5px;
+  cursor: pointer;
+}
+
+.trash-icon {
+  width: 24px;
+  height: 24px;
+  fill: white;
+  /* transition: fill 0.2s ease-in-out; */
+}
+
+.remove-btn:hover .trash-icon {
+  fill: red;
+  transition-duration: 0.8s;
+}
+
+
 
 
 
