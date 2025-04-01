@@ -284,8 +284,9 @@ input {
 }
 
 .movie-details img {
-  border-radius: 40px;
+  border-radius: 20px;
   width: 100%;
+  max-height: 500px;
 }
 
 .movie-details-image, .movie-details-info {
@@ -307,6 +308,7 @@ input {
 
 .movie-details-info h1 {
   line-height: 1.1;
+  text-align: justify;
 }
 
 .description p {
@@ -376,30 +378,6 @@ input {
   margin-top: 200px;
 }
 
-/* .remove-btn {
-  background: none;
-  border: none;
-  cursor: pointer;
-  padding: 5px;
-}
-
-.remove-btn:hover {
-  background: rgba(255, 0, 0, 0.1);
-  border-radius: 50%;
-}
-  
-.trash-icon {
-  width: 24px;
-  height: 24px;
-  fill: white;
-  transition: fill 0.2s ease-in-out;
-}
-
-.remove-btn:hover .trash-icon {
-  fill: red;
-} */
-
-
 .remove-btn {
   position: absolute;
   top: 8px;
@@ -415,13 +393,91 @@ input {
   width: 24px;
   height: 24px;
   fill: white;
-  /* transition: fill 0.2s ease-in-out; */
 }
 
 .remove-btn:hover .trash-icon {
   fill: red;
   transition-duration: 0.8s;
 }
+
+@media all and (max-width: 1040px) {
+
+  .movie-details-container {
+    width: 90%;
+  }
+
+  .movie-details-image, .movie-details-info {
+    width: 50%;
+    padding: 0 20px;
+  }
+}
+
+@media all and (max-width: 1040px) {
+
+  .logo h1, .movie-details-info h1 {
+    font-size: 20px;
+  }
+
+  .description h2 {
+    font-size: 18px;
+  }
+
+  .description p {
+    line-height: 1.5;
+  }
+}
+
+@media all and (max-width: 700px) {
+
+  .movie-details {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .movie-details-image, .movie-details-info {
+    width: 80%;
+  }
+
+  .movie-details-image {
+    margin-bottom: 20px;
+  }
+}
+
+@media all and (max-width: 475px) {
+
+  .logo h1, .movie-details-info h1, .carousel-header {
+    font-size: 18px;
+  }
+
+  .carousel-header {
+    margin: 20px 0 0 30px;
+  }
+
+  .nav-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin: 0;
+  }
+
+  .movie-details-container {
+    padding-top: 10px;
+  }
+
+  .movie-details-image, .movie-details-info {
+    width: 100%;
+  }
+
+  form {
+    width: 96%;
+  }
+
+  .search-container {
+    margin-top: 20px;
+  }
+
+}
+
 
 
 
