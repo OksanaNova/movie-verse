@@ -21,7 +21,6 @@ function MoviesCarousel( {movies} ) {
 
     return (
         <div className="carousel-container">
-
             <Slider {...settings}>
                 {movies.map((element) => (
                     <MovieCard 
@@ -32,7 +31,6 @@ function MoviesCarousel( {movies} ) {
                     poster_path={element.poster_path}/>
                 ))}
             </Slider>
-
         </div>
     )
 }

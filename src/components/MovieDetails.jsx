@@ -35,11 +35,9 @@ function MovieDetails() {
                 setStateLoader(false);
                 const data = await response.json();
                 setMyMovieDetails(data);
-                // console.log(data)
 
                 const savedMovies = JSON.parse(localStorage.getItem('favorite')) || [];
                 setIsMovieSaved(savedMovies.some(movie => movie.id === data.id));
-
             } else {
                 setStateLoader(false);
                 Swal.fire({
@@ -54,7 +52,6 @@ function MovieDetails() {
             const response = await fetch(`https://api.themoviedb.org/3/movie/${id}/similar?api_key=${MY_KEY}`);
             const data = await response.json();
             setSimilarMovies(data.results);
-            // console.log('similar', data.results)
         }; 
 
         getMovieDetails();
@@ -83,7 +80,6 @@ function MovieDetails() {
     if(!myMovieDetails) return <p className='no-results'>Movie not found.</p>
 
     return (
-
         <>
             <div className='movie-details-container'>
 
@@ -126,7 +122,6 @@ function MovieDetails() {
 
                             <h2>Made in</h2>
                             <p>{myMovieDetails.production_countries.map(item => item.name).join(", ")}</p>
-
                         </div>
                     </div>
                 </div>
@@ -138,7 +133,7 @@ function MovieDetails() {
                         width="25" 
                         height="25" 
                         viewBox="0 0 24 24" 
-                        fill={isMovieSaved ? "red" : "white"}
+                        fill={isMovieSaved ? "red" : "lightgrey"}
                         xmlns="http://www.w3.org/2000/svg">
                         <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"/>
                     </svg>
@@ -152,11 +147,7 @@ function MovieDetails() {
                 <MoviesCarousel 
                 movies={similarMovies}/>
             </div>}
-
-
-
         </>
-    
     )
 }
 

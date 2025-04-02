@@ -9,26 +9,29 @@ import Home from './components/Home';
 import Favorites from './components/Favorites';
 import Footer from './components/Footer';
 import './App.css'
-
+import { ThemeProvider } from './context/ThemeContext';
 
 function App() {
 
-  return (<Router id="root">
+  return (
+
+    <ThemeProvider>
+        <Router id="root">
     
-    <Navbar />
+          <Navbar />
 
-    <main>
-      <Routes>
-        <Route path='/' element={<Home />} />
-        <Route path='/favorites' element={<Favorites />} />
-        <Route path='/movie/:id' element={<MovieDetails />} />
-      </Routes>
-    </main>
+          <main>
+            <Routes>
+              <Route path='/' element={<Home />} />
+              <Route path='/favorites' element={<Favorites />} />
+              <Route path='/movie/:id' element={<MovieDetails />} />
+            </Routes>
+          </main>
 
-    <Footer />
+          <Footer />
 
-  </Router>
-
+        </Router>
+    </ThemeProvider>
   )
 }
 

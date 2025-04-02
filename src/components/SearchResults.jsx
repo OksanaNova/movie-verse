@@ -3,7 +3,6 @@ import MovieCard from "./MovieCard";
 function SearchResults({searchResults, userSearch}) {
 
     return (
-
         <div className="search-result-container">
             {searchResults.map((element) => (
                 <MovieCard 
@@ -14,7 +13,7 @@ function SearchResults({searchResults, userSearch}) {
                 poster_path={element.poster_path}
                 searchResults={searchResults}
                 userSearch={userSearch}/>
-                    ))
+                ))
             }
         </div>
     )

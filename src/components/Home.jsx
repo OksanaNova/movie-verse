@@ -28,7 +28,6 @@ function Home() {
       }, [])
 
     return (
-
         <div>
             <div>
                 <SearshInput 
@@ -62,7 +61,6 @@ function Home() {
                    </div>
                 )}
             </div>
-
         </div>
     )
 }

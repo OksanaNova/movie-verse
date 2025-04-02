@@ -10,7 +10,6 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
     const [stateLoader, setStateLoader] = useState(false);
 
     useEffect( () => {
-
         if(!wordSubmitted) return;
 
         const getMovie = async () => {
@@ -22,7 +21,6 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
                 setStateLoader(false);
                 const data = await response.json();
                 setSearchResults(data.results);
-                // console.log('data.results', data.results);
             } else {
                 setStateLoader(false);
                 Swal.fire({
@@ -36,7 +34,6 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
     }, [wordSubmitted])
 
     const myMovieSearch = (e) => {
-        // console.log(e.target.value)
         setUserSearch(e.target.value)
     }
 
@@ -51,7 +48,6 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
     }
 
     return (
-
         <>
             {stateLoader && <LoaderPage />}
 
@@ -68,7 +64,6 @@ function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitte
                     </button>
                 </form>
             </div>
-
         </>
     )
 }

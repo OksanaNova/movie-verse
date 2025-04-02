@@ -36,12 +36,7 @@ function MovieCard({title, vote, poster_path, id, searchResults, userSearch, fro
             <div className="movie-info">
                 <h3>{title}</h3>
                 <p>⭐ {vote.toFixed(1)}</p>
-
-
             </div>
-
-
-
         </Link>
     )
 }

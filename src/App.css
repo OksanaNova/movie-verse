@@ -1,7 +1,32 @@
+:root {
+  --background-color: #222;
+  --foreground-color: white;
+  --secondary-color: #A0A0A0;
+}
+
+.dark-theme {
+  --background-color: #222;
+  --foreground-color: white;
+  --secondary-color: #A0A0A0;
+}
+
+.light-theme {
+  --background-color: white;
+  --foreground-color: #222;
+  --secondary-color: #6d6b6b;
+}
+
+.theme-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
 body, html {
-  height: 100%;
   margin: 0;
-  background: #222;
+  background-color: var(--background-color);
+  transition: all 0.5s ease-in-out;
 }
 
 #root {
@@ -14,7 +39,6 @@ main {
   flex-grow: 1;
 }
 
-/* loader */
 .loader-container {
   display: flex;
   justify-content: center;
@@ -23,7 +47,7 @@ main {
   height: 100%;
 }
 .lds-default {
-  color: #A0A0A0;
+  color: var(--secondary-color);
 }
 .lds-default,
 .lds-default div {
@@ -111,14 +135,13 @@ main {
     transform: scale(1.5);
   }
 }
-/* loader */
 
 nav {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  color: white;
+  color: var(--foreground-color);
   font-family: "Poppins", sans-serif;
   padding: 10px 20px;
 }
@@ -137,19 +160,23 @@ h1 span {
 }
 
 .logo p {
-  color: #A0A0A0;
+  color: var(--secondary-color);
   margin: 0;
+}
+
+.nav-links {
+  display: flex;
 }
 
 .nav-links a {
   margin-left: 20px;
   text-decoration: none;
-  color: #A0A0A0;
+  color: var(--secondary-color);
   font-weight: 500;
 }
 
 .nav-links a:hover {
-  color: white;
+  color: var(--foreground-color);
 }
 
 footer {
@@ -157,10 +184,11 @@ footer {
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background: #222;
-  color: #A0A0A0;
+  background: var(--background-color);
+  color: var(--foreground-color);
   font-family: "Poppins", sans-serif;
   font-size: 12px;
+  transition: all 0.5s ease-in-out;
 }
 
 footer p {
@@ -171,25 +199,18 @@ footer p {
   margin-top: 40px;
   display: flex;
   justify-content: center;
-  /* width: 90%; */
 }
 
 form {
   display: flex;
-  /* justify-content: center; */
   width: 80%;
 }
 
 .btnSearch {
-  background: transparent;
+  background-color: rgba(118, 118, 128, 0.12);
   border-radius: 20px;
   padding: 0 20px;
-  /* border: none; */
   margin-left: 5px;
-  /* flex: 1; */
-}
-
-.btnSearch:hover {
   cursor: pointer;
 }
 
@@ -198,15 +219,12 @@ input {
   border-radius: 20px;
   background-color: rgba(118, 118, 128, 0.12);
   font-family: "Poppins", sans-serif;
-  /* width: 300px; */
-  color: white;
+  color: var(--foreground-color);
   flex: 5;
 }
 
 .movie-card {
   position: relative;
-  /* width: 200px; */
-  /* height: 300px; */
   border-radius: 10px;
   overflow: hidden;
 }
@@ -256,27 +274,25 @@ input {
 .no-results {
   font-family: "Poppins", sans-serif;
   text-align: center;
-  color: white;
+  color: var(--foreground-color);
   margin-top: 40px;
 }
 
 .carousel-header {
   font-family: "Poppins", sans-serif;
-  color: white;
+  color: var(--foreground-color);
   font-size: 20px;
   margin: 25px 0 10px 40px;
-  /* margin: 40px; */
 }
 
 .movie-details-container {
   display: flex;
   align-items: flex-start;
-  color: white;
+  color: var(--foreground-color);
   font-family: "Poppins", sans-serif;
   width: 80%;
   margin: 0 auto;
   padding-top: 40px;
-  /* padding-bottom: 20px; */
 }
 
 .movie-details {
@@ -313,7 +329,7 @@ input {
 
 .description p {
   margin-top: 0;
-  color: #A0A0A0;
+  color: var(--secondary-color);
   text-align: justify;
 }
 
@@ -322,7 +338,7 @@ input {
   justify-content: flex-start;
   flex-wrap: wrap;
   margin-bottom: 16px;
-  color: #A0A0A0;
+  color: var(--secondary-color);
 }
 
 .movie-details-about p {
@@ -346,11 +362,12 @@ input {
 }
 
 .toggle-button {
-  color: #A0A0A0;
+  color: var(--secondary-color);
   font-family: "Poppins", sans-serif;
   background: none;
   font-size: 14px;
   cursor: pointer;
+  border-radius: 5px;
 }
 
 .favorites-header {
@@ -361,7 +378,7 @@ input {
 }
 
 .favorites-header button {
-  color: white;
+  color: var(--foreground-color);
   font-family: "Poppins", sans-serif;
   background: transparent;
   border-radius: 20px;
@@ -372,6 +389,7 @@ input {
 
 .favorites-header button:hover {
   scale: 1.1;
+  transition-duration: 0.5s;
 }
 
 .fav {
@@ -475,7 +493,13 @@ input {
   .search-container {
     margin-top: 20px;
   }
+}
 
+@media all and (max-width: 365px) {
+
+  .nav-links {
+    align-items: flex-start;
+  }
 }
 
 
