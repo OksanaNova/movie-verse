@@ -1,8 +1,8 @@
 
 import { useEffect, useState } from "react";
-import SearshInput from "./SearchInput";
-import SearchResults from "./SearchResults";
-import MoviesCarousel from "./MovieCarousel";
+import SearshInput from "../components/SearchInput";
+import SearchResults from "../components/SearchResults";
+import MoviesCarousel from "../components/MovieCarousel/MovieCarousel";
 import { useLocation } from "react-router";
 
 function Home() {

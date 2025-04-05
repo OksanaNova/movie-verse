@@ -3,11 +3,11 @@ import {
   Routes,
   Route
 } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import MovieDetails from './components/MovieDetails';
-import Home from './components/Home';
-import Favorites from './components/Favorites';
-import Footer from './components/Footer';
+import Navbar from './layout/Navbar';
+import MovieDetails from './pages/MovieDetails';
+import Home from './pages/Home';
+import Favorites from './pages/Favorites';
+import Footer from './layout/Footer';
 import './App.css'
 import { ThemeProvider } from './context/ThemeContext';
 

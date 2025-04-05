@@ -1,9 +1,9 @@
 import { useEffect, useState } from 'react';
 import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import back from '../assets/back.png';
-import LoaderPage from './LoaderPage';
+import LoaderPage from '../components/Loader/LoaderPage';
 import Swal from 'sweetalert2';
-import MoviesCarousel from './MovieCarousel';
+import MoviesCarousel from '../components/MovieCarousel/MovieCarousel';
 
 function MovieDetails() {
 
@@ -75,6 +75,16 @@ function MovieDetails() {
         }
     }
 
+    const backPage = () => {
+        if(fromFavorites) {
+            navigate('/favorites')
+        } else if (searchResults || userSearch) {
+            navigate('/', { state: {searchResults, userSearch} })
+        } else {
+            navigate('/')
+        }
+    }
+
     if(stateLoader) return <LoaderPage />
 
     if(!myMovieDetails) return <p className='no-results'>Movie not found.</p>
@@ -83,15 +93,7 @@ function MovieDetails() {
         <>
             <div className='movie-details-container'>
 
-                <button className='back' onClick={() => {
-                    if(fromFavorites) {
-                        navigate('/favorites')
-                    } else if (searchResults || userSearch) {
-                        navigate('/', { state: {searchResults, userSearch} })
-                    } else {
-                        navigate('/')
-                    }
-                }}>
+                <button className='back' onClick={backPage}>
                     <img src={back} alt='back-arrow'/>
                 </button>
 

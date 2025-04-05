@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import MovieCard from "./MovieCard";
+import MovieCard from "../components/MovieCard/MovieCard";
 import { useLocation } from "react-router-dom";
 import heart from '../assets/Favorites.png'
 

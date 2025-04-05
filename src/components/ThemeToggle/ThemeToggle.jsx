@@ -1,7 +1,7 @@
 import { useContext } from "react";
-import { ThemeContext } from "../context/ThemeContext";
-import sunIcon from "../assets/sun.svg";
-import moonIcon from "../assets/moon.svg";
+import { ThemeContext } from "../../context/ThemeContext";
+import sunIcon from "../../assets/sun.svg";
+import moonIcon from "../../assets/moon.svg";
 
 function ThemeToggle() {
 
