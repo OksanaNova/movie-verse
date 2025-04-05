@@ -1,0 +1,25 @@
+.favorites-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.favorites-header button {
+    color: var(--foreground-color);
+    font-family: "Poppins", sans-serif;
+    background: transparent;
+    border-radius: 20px;
+    padding: 5px 20px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+  
+.favorites-header button:hover {
+    scale: 1.1;
+    transition-duration: 0.5s;
+}
+  
+.fav {
+    margin-top: 200px;
+}

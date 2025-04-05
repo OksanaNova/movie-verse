@@ -1,4 +1,5 @@
 import MovieCard from "./MovieCard/MovieCard";
+import './SearchResults.css'
 
 function SearchResults({searchResults, userSearch}) {
 

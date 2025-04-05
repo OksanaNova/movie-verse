@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import image from '../assets/ri-search-line.svg';
 import Swal from 'sweetalert2';
 import LoaderPage from './Loader/LoaderPage';
+import './SearchInput.css'
 
 function SearshInput( {userSearch, setUserSearch, setSearchResults, wordSubmitted, setWordSubmitted, setSearchAttempted} ) {
 

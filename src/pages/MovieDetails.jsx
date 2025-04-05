@@ -4,6 +4,7 @@ import back from '../assets/back.png';
 import LoaderPage from '../components/Loader/LoaderPage';
 import Swal from 'sweetalert2';
 import MoviesCarousel from '../components/MovieCarousel/MovieCarousel';
+import './MovieDetails.css'
 
 function MovieDetails() {
 
@@ -109,7 +110,7 @@ function MovieDetails() {
                         <div className='movie-details-about'>
                             <p className='release-date'>{myMovieDetails.release_date.split("-")[0]}</p>
                             <p className='genres'>{myMovieDetails.genres.map((item) => item.name).join(", ")}</p>
-                            <p className='vote'>⭐{myMovieDetails.vote_average.toFixed(1)}</p>
+                            <p>⭐{myMovieDetails.vote_average.toFixed(1)}</p>
                         </div>
 
                         <div className='description'>
@@ -130,7 +131,7 @@ function MovieDetails() {
 
                 <button 
                 onClick={addToFavorites} 
-                className={`favorite-button ${isMovieSaved ? "saved" : "default"}`} >
+                className={"favorite-button"} >
                     <svg 
                         width="25" 
                         height="25" 

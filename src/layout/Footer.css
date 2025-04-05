@@ -1,0 +1,15 @@
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: var(--background-color);
+    color: var(--foreground-color);
+    font-family: "Poppins", sans-serif;
+    font-size: 12px;
+    transition: all 0.5s ease-in-out;
+}
+  
+  footer p {
+    margin-right: 8px;
+}

@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import './MovieCard.css'
 
 function MovieCard({title, vote, poster_path, id, searchResults, userSearch, fromFavorites, setFavorites}) {
 

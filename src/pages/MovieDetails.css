@@ -1,0 +1,137 @@
+.no-results {
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+  color: var(--foreground-color);
+  margin-top: 40px;
+}
+
+.movie-details-container {
+  display: flex;
+  align-items: flex-start;
+  color: var(--foreground-color);
+  font-family: "Poppins", sans-serif;
+  width: 80%;
+  margin: 0 auto;
+  padding-top: 40px;
+}
+
+.back, .favorite-button {
+  background: transparent;
+  border: none;
+}
+
+.back:hover, .favorite-button:hover {
+  cursor: pointer;
+  scale: 1.1;
+}
+
+.movie-details {
+  display: flex;
+}
+
+.movie-details img {
+  border-radius: 20px;
+  width: 100%;
+  max-height: 500px;
+}
+
+.movie-details-image, .movie-details-info {
+  padding: 0 40px;
+}
+
+.movie-details-image {
+    width: 35%;
+}
+  
+.movie-details-info {
+  width: 55%;
+}
+  
+.movie-details-info h1, .description h2 {
+  margin: 0;
+  font-weight: 500;
+}
+  
+.movie-details-info h1 {
+  line-height: 1.1;
+  text-align: justify;
+}
+  
+.description p {
+  margin-top: 0;
+  color: var(--secondary-color);
+  text-align: justify;
+}
+  
+.movie-details-about {
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  color: var(--secondary-color);
+}
+  
+.movie-details-about p {
+  padding-right: 10px;
+  margin: 0;
+  margin-right: 10px;
+}
+
+.release-date, .genres {
+  border-right: 1px solid #A0A0A0;
+}
+
+  @media all and (max-width: 1040px) {
+
+    .movie-details-container {
+        width: 90%;
+    }
+
+    .movie-details-image, .movie-details-info {
+        width: 50%;
+        padding: 0 20px;
+    }
+
+    .movie-details-info h1 {
+        font-size: 20px;
+    }
+    
+    .description h2 {
+        font-size: 18px;
+    }
+    
+    .description p {
+        line-height: 1.5;
+    }
+  }
+
+  @media all and (max-width: 700px) {
+
+    .movie-details {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+      .movie-details-image, .movie-details-info {
+        width: 80%;
+    }
+    
+      .movie-details-image {
+        margin-bottom: 20px;
+    }
+  }
+
+  @media all and (max-width: 475px) {
+
+    .movie-details-container {
+        padding-top: 10px;
+    }
+
+    .movie-details-info h1 {
+        font-size: 18px;
+    }
+
+    .movie-details-image, .movie-details-info {
+        width: 100%;
+    }
+  }
